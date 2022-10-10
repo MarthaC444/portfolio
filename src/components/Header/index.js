@@ -1,11 +1,10 @@
 import React from "react";
 
 import Button from "react-bootstrap/Button";
-// import "../../custom.scss";
 
 function Header(props) {
   return (
-  <div>
+  <div >
       <Button variant="primary">Primary</Button>{' '}
       <Button variant="secondary">Secondary</Button>{' '}
       <Button variant="success">Success</Button>{' '}

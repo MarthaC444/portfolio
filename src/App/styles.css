@@ -1,0 +1,14 @@
+/* override button styling with css - must use !important for react-bootstrap
+/* .btn-primary {
+  color: #fff;
+  background-color: #74802e !important;
+  border-color: #38802e !important;
+}
+.btn-primary:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+.btn-primary:active {
+  background-color: blue !important;
+
+} */
