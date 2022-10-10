@@ -1,10 +1,23 @@
 import React from "react";
+import Header from "../Header";
+import Hero from "../Hero";
+import Availability from "../Availablity";
+import Portfolio from "../Portfolio";
+import Contact from "../Contact";
+import Footer from "../Footer";
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <h1>This is home.</h1>;
-  }
+
+function Home(props) {
+  return (
+    <>
+    <Header />
+    <Hero />
+    <Availability />
+    <Portfolio />
+    <Contact />
+    <Footer />
+    </>
+  )
 }
+
+export default Home;
