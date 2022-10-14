@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Header";
 import Hero from "../Hero";
-import Availability from "../Availablity";
+import Services from "../Services";
 import Portfolio from "../Portfolio";
 import Contact from "../Contact";
 import Footer from "../Footer";
@@ -12,7 +12,7 @@ function Home(props) {
     <>
     <Header />
     <Hero />
-    <Availability />
+    <Services />
     <Portfolio />
     <Contact />
     <Footer />
