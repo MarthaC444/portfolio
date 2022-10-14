@@ -4,8 +4,9 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 574px) {
   .change-alignment {
     text-align: center;
+    padding: 3%;
   }
 }
