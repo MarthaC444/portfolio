@@ -1,0 +1,11 @@
+@media screen and (min-width: 576px) {
+  .change-alignment {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .change-alignment {
+    text-align: center;
+  }
+}
