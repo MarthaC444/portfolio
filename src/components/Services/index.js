@@ -20,7 +20,7 @@ function Services(props) {
             ></Image>
           </Col>
           <Col sm={6}>
-            <p className="pe-4 change-alignment">
+            <p className="change-alignment">
               I've focused on React.js but would love the opportunity to expand
               my experience into other frameworks. If you located in the
               Tri-City area of east Tennessee or have a remote position, I'd
