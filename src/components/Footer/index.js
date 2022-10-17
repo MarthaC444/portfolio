@@ -11,7 +11,7 @@ function Footer(props) {
           <span className="text-muted">&copy; 2022 Martha Chamberlain</span>
         </div>
 
-        <ul className="nav col justify-content-end d-flex">
+        <ul className="nav col d-flex justify-content-end">
           <li className="m-1 social-space">
             <a href="https://github.com/MarthaC444">
               <i
