@@ -7,11 +7,11 @@ function Footer(props) {
     <div className="container">
       <div className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div className="col-md-4 d-flex align-items-center">
-          <Image className="m-2" alt="" src={Logo}></Image>
+          <Image src={Logo} className="m-2" alt=""></Image>
           <span className="text-muted">&copy; 2022 Martha Chamberlain</span>
         </div>
 
-        <ul className="nav col justify-content-end d-flex">
+        <ul className="nav col d-flex justify-content-end">
           <li className="m-1 social-space">
             <a href="https://github.com/MarthaC444">
               <i

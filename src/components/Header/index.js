@@ -21,8 +21,8 @@ function Header(props) {
             className="justify-content-end"
           >
             <Nav className="">
-              <Nav.Link className="text-uppercase" href="#availability">
-                Availability
+              <Nav.Link className="text-uppercase" href="#services">
+                Services
               </Nav.Link>
               <NavDropdown
                 className="text-uppercase"
