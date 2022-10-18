@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.1c906f1c.js",
+    "main.css": "/static/css/main.67dd1f8f.css",
+    "main.js": "/static/js/main.11d62acb.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/hero-streetscene.jpg": "/static/media/hero-streetscene.67f84319b9f3a4365116.jpg",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
+    "static/media/Oswald-VariableFont_wght.ttf": "/static/media/Oswald-VariableFont_wght.46d7853f0185f6bf0c93.ttf",
+    "static/media/headshot.jpg": "/static/media/headshot.ba8c0582ef0e787ff451.jpg",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.1c906f1c.js.map": "/static/js/main.1c906f1c.js.map",
+    "main.67dd1f8f.css.map": "/static/css/main.67dd1f8f.css.map",
+    "main.11d62acb.js.map": "/static/js/main.11d62acb.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.1c906f1c.js"
+    "static/css/main.67dd1f8f.css",
+    "static/js/main.11d62acb.js"
   ]
 }
