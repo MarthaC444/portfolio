@@ -5,7 +5,14 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "react-bootstrap/Image";
 import Logo from "../../assets/monogram-blk-70.png";
-import Button from "react-bootstrap/Button";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link as RouterLink,
+} from "react-router-dom";
+
+import { Link } from "react-scroll";
 
 function Header(props) {
   return (
@@ -21,17 +28,38 @@ function Header(props) {
             className="justify-content-end"
           >
             <Nav className="">
-              <Nav.Link className="text-uppercase" href="#services">
-                Services
-              </Nav.Link>
+              <Link
+                activeClass="active"
+                to="whatImDoing"
+                spy={true}
+                smooth={true}
+                offset={-25}
+                duration={500}
+              >
+                <Nav.Item className="text-uppercase nav-link">
+                  What I'm doing
+                </Nav.Item>
+              </Link>
               <NavDropdown
                 className="text-uppercase"
                 title="Portfolio"
                 id="basic-nav-dropdown"
               >
-                <NavDropdown.Item className="text-uppercase" href="#action/3.1">
-                  project 1
-                </NavDropdown.Item>
+                <Link
+                  activeClass="active"
+                  to="portfolio"
+                  spy={true}
+                  smooth={true}
+                  offset={-25}
+                  duration={500}
+                >
+                  <Nav.Item
+                    className="text-uppercase dropdown-item"
+                    href="#action/3.1"
+                  >
+                    All Projects
+                  </Nav.Item>
+                </Link>
                 <NavDropdown.Item className="text-uppercase" href="#action/3.2">
                   Project 2
                 </NavDropdown.Item>
@@ -43,9 +71,21 @@ function Header(props) {
                   Project 4
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link className="text-uppercase" href="#contact">
-                Contact
-              </Nav.Link>
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-25}
+                duration={500}
+              >
+                <Nav.Item className="text-uppercase nav-link">Contact</Nav.Item>
+              </Link>
+              <Nav.Item className="text-uppercase">
+                <RouterLink to="/resume" className="text-uppercase nav-link">
+                  Resume
+                </RouterLink>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

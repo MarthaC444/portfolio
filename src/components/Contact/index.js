@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
 import emailjs from "@emailjs/browser";
+import { Element } from 'react-scroll';
+
 
 function Contact(props) {
   const form = useRef();
@@ -46,6 +48,7 @@ function Contact(props) {
 
   return (
     <Container>
+      <Element name="contact"></Element>
       <h2 className="mb-3 text-uppercase fw-bold text-center">Contact</h2>
       <Container className="container-md">
         <Row>

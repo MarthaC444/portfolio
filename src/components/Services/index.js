@@ -4,13 +4,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Headshot from "../../assets/headshot.jpg";
+import { Element } from 'react-scroll';
+
 import "./styles.css";
 
 function Services(props) {
   return (
     <section>
       <Container className="my-5 mx-auto">
-        <h2 className="pb-3 text-uppercase fw-bold text-center">What I do</h2>
+        <Element name="whatImDoing"></Element>
+        <h2 className="pb-3 text-uppercase fw-bold text-center">What I'm Doing</h2>
         <Row className="d-flex py-3 align-items-center">
           <Col sm={6} className="d-flex justify-content-center">
             <Image
