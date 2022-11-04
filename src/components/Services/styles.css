@@ -1,12 +1,13 @@
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
   .change-alignment {
     text-align: left;
   }
-}
+} */
 
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 768px) {
   .change-alignment {
     text-align: center;
     padding: 3%;
+    margin: 3%
   }
 }
