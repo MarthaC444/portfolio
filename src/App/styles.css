@@ -12,3 +12,7 @@ body {
 p {
   font-family: 'Open Sans', sans-serif;
 }
+
+.nav-link:hover {
+  color: var(--bs-navbar-hover-color) !important;
+}
