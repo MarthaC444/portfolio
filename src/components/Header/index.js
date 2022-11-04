@@ -12,6 +12,7 @@ import {
   Link as RouterLink,
 } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+import "./styles.css";
 
 function Header(props) {
   const scrollWithOffset = (el, offset) => {
@@ -41,7 +42,7 @@ function Header(props) {
               <NavHashLink
                 to="/#whatImDoing"
                 scroll={(el) => scrollWithOffset(el, 45)}
-                className="text-uppercase nav-link text-muted"
+                className="text-uppercase nav-link text-muted hash-link"
               >
                 What Im Doing
               </NavHashLink>

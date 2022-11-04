@@ -28,7 +28,7 @@ function Services(props) {
             <p className="change-alignment md-text-start">
               I'm building personal projects with React.js, Next.js, and getting
               more practice with UI tools like React-Bootstrap and Material UI.
-              I'm currently looking for a development role so if you're located in the Tri-City area of east Tennessee or have a
+              I'm currently looking for an Apprenticeship or Entry level Jr. development role so if you're located in the Tri-City area of east Tennessee or have a
               remote position, I'd love to hear from you!
             </p>
           </Col>
