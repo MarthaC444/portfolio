@@ -12,7 +12,7 @@ function Portfolio(props) {
   return (
     <section className="pt-5 pb-5">
       <Container>
-        <Element name="portfolio"></Element>
+        <Element id="portfolio"></Element>
         <h2 className="mb-3 text-uppercase fw-bold text-center">Portfolio</h2>
         <Row className="py-3">
           <PortfolioProject />

@@ -48,7 +48,7 @@ function Contact(props) {
 
   return (
     <Container>
-      <Element name="contact"></Element>
+      <section id="contact"></section>
       <h2 className="mb-3 text-uppercase fw-bold text-center">Contact</h2>
       <Container className="container-md">
         <Row>

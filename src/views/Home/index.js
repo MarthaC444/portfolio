@@ -7,9 +7,7 @@ import Contact from "../../components/Contact";
 import ScrollToTop from "../../components/ScrollToTop";
 import Footer from "../../components/Footer";
 
-
 function Home() {
-
   return (
     <>
       <Header />
@@ -17,7 +15,6 @@ function Home() {
       <Services />
       <Portfolio />
       <Contact />
-
       <ScrollToTop />
       <Footer />
     </>
