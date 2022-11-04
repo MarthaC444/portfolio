@@ -1,31 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+import "./styles.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import pdfFile from "../../assets/resume.pdf";
-import { Container } from "react-bootstrap";
-import { Document, Page, pdfjs } from "react-pdf";
-// needed to load a webworker when using webpack/create-react-app
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+import jpgFile from "../../assets/resume.jpg";
+import { Container, Button, Image } from "react-bootstrap";
 
 function Resume(props) {
-  const [numPages, setNumPages] = useState(1);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   return (
     <>
       <Header />
-      <Container className="fluid">
-        <Document file={pdfFile} AonLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+      <Container
+        fluid
+        className="mx-auto d-flex justify-content-center py-5 p-sm-5"
+        style={{
+          background:
+            "linear-gradient(210deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%)",
+        }}
+      >
+        <Image src={jpgFile} className="img-fluid border border-2" />
+      </Container>
+      <Container
+        fluid
+        className="ms-auto d-flex justify-content-center m-3 p-5"
+      >
+        <Button
+          className=""
+          variant="outline-dark"
+          href={pdfFile}
+          download="Martha-Chamberlain-Resume"
+        >
+          Download PDF
+        </Button>
       </Container>
       <Footer />
     </>
