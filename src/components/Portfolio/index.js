@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import PortfolioProject from "../PortfolioProject";
 import SecondProject from "../SecondProject";
 import ThirdProject from "../ThirdProject";
-import { Element } from "react-scroll";
 
 import "./styles.css";
 
@@ -12,7 +11,7 @@ function Portfolio(props) {
   return (
     <section className="pt-5 pb-5">
       <Container>
-        <Element id="portfolio"></Element>
+        <section id="portfolio"></section>
         <h2 className="mb-3 text-uppercase fw-bold text-center">Portfolio</h2>
         <Row className="py-3">
           <PortfolioProject />

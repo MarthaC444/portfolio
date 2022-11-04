@@ -6,8 +6,6 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
 import emailjs from "@emailjs/browser";
-import { Element } from 'react-scroll';
-
 
 function Contact(props) {
   const form = useRef();
