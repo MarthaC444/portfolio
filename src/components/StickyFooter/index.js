@@ -2,9 +2,9 @@ import Image from "react-bootstrap/Image";
 import Logo from "../../assets/monogram-blk-30.png";
 import "./styles.css";
 
-function Footer(props) {
+function StickyFooter(props) {
   return (
-    <div className="container">
+    <div className="container fixed-bottom">
       <div className="d-flex flex-wrap justify-content-between align-items-center py-sm-3 my-4 border-top">
         <div className="col-md-4 d-flex align-items-center">
           <Image src={Logo} className="m-2" alt=""></Image>
@@ -34,4 +34,4 @@ function Footer(props) {
   );
 }
 
-export default Footer;
+export default StickyFooter;
