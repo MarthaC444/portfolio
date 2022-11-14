@@ -9,9 +9,8 @@ import "./styles.css";
 
 function Services(props) {
   return (
-    <section>
+    <section id="whatImDoing" className="pt-5 pb-5">
       <Container className="my-5 mx-auto">
-        <section id="whatImDoing"></section>
         <h2 className="pb-3 text-uppercase fw-bold text-center">
           What I'm Doing
         </h2>
@@ -28,8 +27,9 @@ function Services(props) {
             <p className="change-alignment md-text-start">
               I'm building personal projects with React.js, Next.js, and getting
               more practice with UI tools like React-Bootstrap and Material UI.
-              I'm currently looking for an Apprenticeship or Entry level Jr. development role so if you're located in the Tri-City area of east Tennessee or have a
-              remote position, I'd love to hear from you!
+              I'm currently looking for an Apprenticeship or Entry level Jr.
+              development role so if you're located in the Tri-City area of east
+              Tennessee or have a remote position, I'd love to hear from you!
             </p>
           </Col>
         </Row>
