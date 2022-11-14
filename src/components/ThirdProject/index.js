@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Card from "react-bootstrap/Card";
@@ -19,33 +21,33 @@ function ThirdProject(props) {
           <div
             id="third-project-card-content"
             className="d-flex flex-column justify-content-between card-img-overlay overlay"
-            onMouseEnter={() => setOpen(!open)}
-            onMouseLeave={() => setOpen(!open)}
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
             aria-owns="third-project-card-content"
             aria-expanded={open}
           >
             <div className="d-flex justify-content-between align-items-start">
               <Card.Title className="pt-2">Third Project</Card.Title>
-              <div>
-                <ul className="nav col">
-                  <li className="mx-1 pb-1">
+              <Nav>
+                <Row>
+                  <Col className="px-2">
                     <a href="#">
                       <i
                         className="bi bi-github"
                         style={{ fontSize: 30, color: "white" }}
                       ></i>
                     </a>
-                  </li>
-                  <li className="mx-1 pb-1">
+                  </Col>
+                  <Col className="ps-2 pe-3">
                     <a href="#">
                       <i
                         className="bi bi-eye-fill"
                         style={{ fontSize: 30, color: "white" }}
                       ></i>
                     </a>
-                  </li>
-                </ul>
-              </div>
+                  </Col>
+                </Row>
+              </Nav>
             </div>
             <Card.Text>
               A very short description CAN ONLY BE 123 CHAR LONG...with an extra
