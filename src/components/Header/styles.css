@@ -1,0 +1,33 @@
+.nav-link:hover {
+  color: var(--bs-navbar-hover-color) !important;
+}
+
+.navlink-animation {
+  width: fit-content;
+  display: inline-block;
+  position: relative;
+}
+
+.navlink-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bs-navbar-hover-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navlink-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
