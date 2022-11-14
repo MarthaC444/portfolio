@@ -25,7 +25,7 @@ const ScrollToTop = () => {
       {showTopBtn && (
         <i
           className="bi bi-caret-up-square-fill pe-4 pb-3 text-muted"
-          style={{ fontSize: 40, opacity: 0.7 }}
+          style={{ fontSize: 40, opacity: 1 }}
           onClick={goToTop}
         ></i>
       )}
