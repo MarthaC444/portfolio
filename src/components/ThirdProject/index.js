@@ -9,7 +9,7 @@ function ThirdProject(props) {
 
   return (
     <Col md={6} lg={4} className="p-1">
-      <Card className="bg-dark text-white">
+      <Card className="bg-dark text-white shadow-sm">
         <Image
           className=""
           src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
