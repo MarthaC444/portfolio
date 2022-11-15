@@ -1,9 +1,5 @@
 /* override button styling with css - must use !important to overcome react-bootstrap */
 
-:root {
-  --bs-navbar-toggler-focus-width: 0.1rem;
-}
-
 @font-face {
   font-family: 'Oswald';
   src: local('Oswald'), url(../fonts/Oswald-VariableFont_wght.ttf) format('truetype');
@@ -17,6 +13,6 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
-.nav-link:hover {
-  color: var(--bs-navbar-hover-color) !important;
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 .1rem !important;
 }

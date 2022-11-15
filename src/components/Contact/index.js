@@ -45,10 +45,9 @@ function Contact(props) {
   };
 
   return (
-    <Container>
-      <section id="contact"></section>
-      <h2 className="mb-3 text-uppercase fw-bold text-center">Contact</h2>
-      <Container className="container-md">
+    <section id="contact" className="pt-5">
+      <Container className="container-md mt-5">
+        <h2 className="mb-4 text-uppercase fw-bold text-center">Contact</h2>
         <Row>
           <Col className="col-xs-100 col-lg-6 mx-auto">
             <Form ref={form} onSubmit={sendEmail}>
@@ -96,7 +95,11 @@ function Contact(props) {
                   required
                 />
               </FloatingLabel>
-              <Form.Control type="submit" value="Send" />
+              <Form.Control
+                type="submit"
+                value="Send"
+                className="btn btn-outline-dark"
+              />
             </Form>
           </Col>
         </Row>
@@ -131,7 +134,7 @@ function Contact(props) {
           )}
         </div>
       </Container>
-    </Container>
+    </section>
   );
 }
 

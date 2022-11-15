@@ -4,9 +4,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function Footer(props) {
+function StickyFooter(props) {
   return (
-    <Container>
+    <Container className=" fixed-bottom">
       <Container className="py-3 my-4 border-top">
         <Row className="d-flex flex-column flex-sm-row align-items-center">
           <Col className="order-sm-2">
@@ -39,4 +39,4 @@ function Footer(props) {
   );
 }
 
-export default Footer;
+export default StickyFooter;
