@@ -1,19 +1,62 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import { useSpring, animated } from "react-spring";
 import Headshot from "../../assets/headshot.jpg";
 
 import "./styles.css";
 
 function Services(props) {
+  const headerStyle = useSpring({
+    config: { duration: 500 },
+    from: { opacity: 0, left: "-500px" },
+    to: {
+      opacity: 1,
+      left: "-500px"
+    }
+  });
+
+  function useIntersectionObserver(
+    elementRef,
+    { threshold = 0, root = null, rootMargin = "0%", freezeOnceVisible = false }
+  ) {
+    const [entry, setEntry] = useState();
+  
+    const frozen = entry?.isIntersecting && freezeOnceVisible;
+  
+    const updateEntry = ([entry]) => {
+      setEntry(entry);
+    };
+  
+    useEffect(() => {
+      const node = elementRef?.current;
+      const hasIOSupport = !!window.IntersectionObserver;
+  
+      if (!hasIOSupport || frozen || !node) return;
+  
+      const observerParams = { threshold, root, rootMargin };
+      const observer = new IntersectionObserver(updateEntry, observerParams);
+  
+      observer.observe(node);
+  
+      return () => observer.disconnect();
+    }, [elementRef, threshold, root, rootMargin, frozen]);
+  
+    return entry;
+  }
+  const triggerRef = useRef();
+  const dataRef = useIntersectionObserver(triggerRef, {
+    freezeOnceVisible: true 
+  });
   return (
     <section id="whatImDoing" className="pt-5 pb-5">
       <Container className="my-5 mx-auto">
-        <h2 className="pb-3 text-uppercase fw-bold text-center">
+        <animated.h2 style={headerStyle} className="pb-3 text-uppercase fw-bold text-center">
+
           What I'm Doing
-        </h2>
+        </animated.h2>
         <Row className="d-flex py-3 flex-sm-column flex-md-row align-items-center">
           <Col sm={6} className="d-flex justify-content-center">
             <Image
