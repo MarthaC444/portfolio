@@ -2,6 +2,14 @@
   background-image: url(../../assets/hero-streetscene.jpg);
   background-size: cover;
   background-position: center;
+
+}
+
+.text-gradient {
+  z-index: 1;
+  background: linear-gradient(180deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (min-width: 992px) {
@@ -23,11 +31,4 @@
         rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0));
   }
-}
-
-.text-gradient {
-  z-index: 1;
-  background: linear-gradient(180deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

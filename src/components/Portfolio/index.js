@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import PortfolioProject from "../PortfolioProject";
 import SecondProject from "../SecondProject";
 import ThirdProject from "../ThirdProject";
-
 import "./styles.css";
 
 function Portfolio(props) {
