@@ -11,8 +11,8 @@ function EditableList() {
       <Header />
       <Container className="mx-auto">
         <h1>An Editable List</h1>
-        <StickyFooter />
       </Container>
+      <StickyFooter />
     </div>
   );
 }
