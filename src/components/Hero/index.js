@@ -12,7 +12,7 @@ function Hero(props) {
           <Col lg={6}>
             <h1 className="lh-3 mb-3 text-uppercase">
               <div className="pb-2">
-                <span className="fs-3">Jr. Front End Developer | React.js </span>
+                <span className="fs-3">Jr. Front End Developer | React</span>
               </div>
               <div className="pt-1">
                 <span className="text-gradient display-2 lh-1 fw-bold">
