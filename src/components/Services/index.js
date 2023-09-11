@@ -23,10 +23,10 @@ function Services(props) {
             ></Image>
           </Col>
           <Col sm={12} md={6}>
-            <p className="change-alignment md-text-start">
+            <p className="change-alignment md-text-start ">
               I'm building personal projects with React.js and UI tools like React-Bootstrap and Material UI.
               I'm currently looking for an Apprenticeship or Entry level Jr.
-              development role so if you're located in the Tri-City area of east
+              development role so if you're located in the Tri-Cities area of east
               Tennessee or have a remote position, I'd love to hear from you!
             </p>
           </Col>
