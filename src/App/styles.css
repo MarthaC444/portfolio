@@ -16,3 +16,10 @@ p {
 .navbar-toggler:focus {
   box-shadow: 0 0 0 .1rem !important;
 }
+
+/* EDITABLE LIST */
+
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
