@@ -1,8 +1,9 @@
 /* override button styling with css - must use !important to overcome react-bootstrap */
 
 @font-face {
-  font-family: 'Oswald';
-  src: local('Oswald'), url(../fonts/Oswald-VariableFont_wght.ttf) format('truetype');
+  font-family: "Oswald";
+  src: local("Oswald"),
+    url(../fonts/Oswald-VariableFont_wght.ttf) format("truetype");
 }
 
 body {
@@ -10,16 +11,24 @@ body {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 .1rem !important;
+  box-shadow: 0 0 0 0.1rem !important;
 }
 
 /* EDITABLE LIST */
 
 .item-exit-active {
   opacity: 0;
-  transition: opacity 700ms ease-out;
+  transition: opacity 400ms ease-out;
+}
+
+.editable-textarea {
+  border-style: none;
+  border-color: transparent;
+  overflow: auto;
+  outline: none;
+  resize: none;
 }

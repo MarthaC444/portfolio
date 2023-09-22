@@ -1,35 +1,34 @@
-// TODO improvements - replace "brute force" replacement of items array with the package deep-equal. Would trigger the render on an actual comparison of state instead of overwriting my whole array.
-// TODO replace math.random with a real id picker
+// TODO improvements - replace "brute force" replacement of items array with the package use-deep-compare-effect. Would trigger the render on an actual comparison of state instead of overwriting my whole array.
 // TODO create undo last item list?
-// TODO get rid of the originating input button and input and replace with the first editable list item, empty
+// TODO get rid of the originating input button and input and replace with the first editable list item, empty, also how to always have this new item available? hit enter inside an input creates new empty item, AND have a button to create new item....
 // TODO do i need any kind of field validation?
 // TODO react-dom.development.js:86 Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of Transition which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node
+// why would hitting enter on an update entry delete the entry? cant replicate now... try to reconstruct
+// TODO make text box responsive and always show all the text
 import React, { useState } from "react";
 import Header from "../../components/Header";
 import StickyFooter from "../../components/StickyFooter";
-import Form from "react-bootstrap/Form";
-import { Container, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import ShortUniqueId from "short-unique-id";
+
+import TextareaAutosize from "react-textarea-autosize";
 
 import "../../App/styles.css";
+
+const uid = new ShortUniqueId();
 
 function EditableList() {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
 
   function addItem() {
-    // TODO change to if blank just leave blank, no need to remind, just leave it blinking
-    if (!newItem) {
-      alert("Enter an item");
-      return;
-    }
-
     const item = {
-      id: Math.floor(Math.random() * 1000),
+      id: uid.rnd(),
       value: newItem,
     };
 
-    setItems((oldList) => [...oldList, item]);
+    setItems((oldList) => [...oldList, item]); //TODO what is this code called? how does it add new item to the array?
     setNewItem("");
   }
 
@@ -37,22 +36,38 @@ function EditableList() {
     const newArray = items.filter((item) => item.id !== id);
     setItems(newArray);
   }
-  
+
   function updateItem(item, newValue) {
-    // TODO is there a better way to pass this id through so I don't have to assign it to variable to do below? Is this screwy?
-    const idNumber= item.id;
-    items[items.findIndex((item => item.id === idNumber))].value = newValue;
+    items[items.findIndex((x) => x.id === item.id)].value = newValue;
     setItems([...items]);
   }
 
+  function handleResize() {}
+
   function createInput(item) {
-    return <Form.Control size="lg" type="text" value={item.value} onChange={ e => updateItem(item, e.target.value)} />;
+    return (
+      <TextareaAutosize
+        className="editable-textarea"
+        value={item.value}
+        // size="lg"
+        type="text"
+        onChange={(e) => updateItem(item, e.target.value)}
+      />
+      // <Form.Control
+      //   className="editable-size"
+      //   size="lg"
+      //   type="text"
+      //   as='textarea'
+      //   value={item.value}
+      //   onChange={(e) => updateItem(item, e.target.value)}
+      // />
+    );
   }
 
   return (
     <div className="h-100">
       <Header />
-      <Container>
+      <Container className="w-50">
         <h1 className="mx-auto text-center">An Editable List</h1>
         {/* Input and button */}
         <div className="mx-auto text-center">
@@ -70,13 +85,12 @@ function EditableList() {
         {/* Unordered list with items */}
         <TransitionGroup component="form">
           {items.map((item) => (
-            <CSSTransition key={item.id} timeout={700} classNames="item">
+            <CSSTransition key={item.id} timeout={400} classNames="item">
               <Form.Check
                 key={`default-checkbox`}
                 className="mb-3"
                 type={"checkbox"}
                 id={`{item.id}`}
-                // label={item.value}
                 label={createInput(item)}
                 onChange={(e) => deleteItem(item.id)}
               />
