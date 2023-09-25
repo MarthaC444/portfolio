@@ -42,37 +42,27 @@ function EditableList() {
     setItems([...items]);
   }
 
-  function handleResize() {}
-
   function createInput(item) {
     return (
       <TextareaAutosize
         className="editable-textarea"
+        style={{width: "100%"}}
         value={item.value}
-        // size="lg"
         type="text"
         onChange={(e) => updateItem(item, e.target.value)}
       />
-      // <Form.Control
-      //   className="editable-size"
-      //   size="lg"
-      //   type="text"
-      //   as='textarea'
-      //   value={item.value}
-      //   onChange={(e) => updateItem(item, e.target.value)}
-      // />
     );
   }
 
   return (
     <div className="h-100">
       <Header />
-      <Container className="w-50">
+      <Container className="restrict-width">
         <h1 className="mx-auto text-center">An Editable List</h1>
         {/* Input and button */}
+        {/* pull out as component */}
         <div className="mx-auto text-center">
           <input
-            className=""
             type="text"
             placeholder="Add an item"
             value={newItem}
@@ -92,7 +82,7 @@ function EditableList() {
                 type={"checkbox"}
                 id={`{item.id}`}
                 label={createInput(item)}
-                onChange={(e) => deleteItem(item.id)}
+                onChange={(e) => deleteItem(item.id)} /* change to when is checked? instead of just an onchange? seems more specific to me */
               />
             </CSSTransition>
           ))}

@@ -32,3 +32,13 @@ p {
   outline: none;
   resize: none;
 }
+
+.form-check-label {
+  width: 100%;
+}
+
+@media (min-width: 576px) {  
+  .restrict-width {
+    max-width: 400px;
+  }
+}
