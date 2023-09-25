@@ -1,18 +1,8 @@
-// TODO improvements - replace "brute force" replacement of items array with the package use-deep-compare-effect. Would trigger the render on an actual comparison of state instead of overwriting my whole array.
-// TODO create undo last item list?
-// TODO get rid of the originating input button and input and replace with the first editable list item, empty, also how to always have this new item available? hit enter inside an input creates new empty item, AND have a button to create new item....
-// TODO do i need any kind of field validation?
-// TODO react-dom.development.js:86 Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of Transition which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node
-// why would hitting enter on an update entry delete the entry? cant replicate now... try to reconstruct
-// TODO make text box responsive and always show all the text
 import React, { useState } from "react";
-import Header from "../../components/Header";
-import StickyFooter from "../../components/StickyFooter";
 import { Container, Form, Button } from "react-bootstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import ShortUniqueId from "short-unique-id";
-
 import TextareaAutosize from "react-textarea-autosize";
+import ShortUniqueId from "short-unique-id";
 
 import "../../App/styles.css";
 
@@ -54,10 +44,9 @@ function EditableList() {
     );
   }
 
-  return (
-    <div className="h-100">
-      <Header />
-      <Container className="restrict-width">
+return(
+
+<Container className="restrict-width">
         <h1 className="mx-auto text-center">An Editable List</h1>
         {/* Input and button */}
         {/* pull out as component */}
@@ -100,9 +89,7 @@ function EditableList() {
           })}
         </ul>
       </Container>
-      <StickyFooter />
-    </div>
-  );
+)
 }
 
 export default EditableList;

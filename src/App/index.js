@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Home from "../views/Home";
 import Resume from "../views/Resume";
-import EditableList from "../views/EditableList";
+import List from "../views/List";
 import FourOhFour from "../views/FourOhFour";
 import "./styles.css";
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<Home />} />
       <Route path="/resume" element={<Resume />} />
-      <Route path="/editablelist" element={<EditableList />} />
+      <Route path="/list" element={<List />} />
       <Route path="*" element={<FourOhFour />} />
       <Route path="*/*" element={<FourOhFour />} />
     </>
