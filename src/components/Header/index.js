@@ -16,7 +16,7 @@ function Header(props) {
       <Container className="my-4">
         <Navbar.Brand>
           <RouterLink to="/">
-            <Image src={Logo} alt="" height="" />
+            <Image src={Logo} alt="Martha's monogram as logo" />
           </RouterLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
