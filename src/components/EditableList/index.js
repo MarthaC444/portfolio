@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Button, Form } from "react-bootstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TextareaAutosize from "react-textarea-autosize";
 import ShortUniqueId from "short-unique-id";
@@ -14,17 +14,16 @@ const initialItem = {
 };
 
 function EditableList() {
-  const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([initialItem]);
 
   function addItem(e) {
     e.preventDefault();
+    console.log("e in addItem", e);
     const item = {
       id: uid.rnd(),
-      value: newItem,
+      value: "",
     };
     setItems((oldList) => [...oldList, item]); //TODO what is this code called? how does it add new item to the array?
-    setNewItem("");
   }
 
   function deleteItem(id) {
@@ -64,33 +63,20 @@ function EditableList() {
               type={"checkbox"}
               id={`{item.id}`}
               label={createInput(item)}
-              onChange={(e) =>
-                deleteItem(item.id)
-              } /* change to when is checked? instead of just an onchange? seems more specific to me */
+              onClick={(e) => deleteItem(item.id)}
             />
           </CSSTransition>
         ))}
-        <div className="  ">
-          <Button
-            name="add an item"
-            variant="light"
-            className="btn btn-lg d-flex flex-row border-0 bg-transparent"
-            onClick={() => addItem()}
-          >
-            <i class="bi bi-plus-circle"></i>
-            <span className="px-3 text-nowrap">Add an item</span>
-          </Button>
-          <Button
-            name="add an item"
-            variant="outline-dark"
-            className="btn btn-lg d-flex flex-row "
-            onClick={() => addItem()}
-          >
-            <i class="bi bi-plus-circle"></i>
-            <span className="px-3 text-nowrap">Add an item</span>
-          </Button>
-        </div>
       </TransitionGroup>
+      <Button
+        name="add an item"
+        variant="outline-dark"
+        className="btn btn-lg d-flex flex-row "
+        onClick={(e) => addItem(e)}
+      >
+        <i className="bi bi-plus-circle"></i>
+        <span className="px-3 text-nowrap">Add an item</span>
+      </Button>
       <div className="bg-secondary py-2">
         <ul className="list-group py-5">
           {items.map((item) => {
