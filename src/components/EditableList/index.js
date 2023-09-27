@@ -2,28 +2,43 @@ import React, { useState } from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TextareaAutosize from "react-textarea-autosize";
-import ShortUniqueId from "short-unique-id";
+import { v4 as uuidv4 } from 'uuid';
 
 import "../../App/styles.css";
 
-const uid = new ShortUniqueId();
-
-const initialItem = {
-  id: uid.rnd(),
+const initialItem = { // Can create one of these that can be used to initialize the array and for addItem?
+  id: uuidv4(),
   value: "",
 };
 
 function EditableList() {
   const [items, setItems] = useState([initialItem]);
 
-  function addItem(e) {
-    e.preventDefault();
-    console.log("e in addItem", e);
+  function addItem(sourceItem, e) {
+    console.log('e', e);
+    console.log('sourceItem', sourceItem.id);
+    // button add comes in with undefined sourceItem
+    if (sourceItem === undefined) { sourceItem = items[items.length - 1];}
+    console.log('sourceItem 2', sourceItem.id);
+
+    e === undefined ? (e = "") : e.preventDefault();
+
+    // e.preventDefault();
     const item = {
-      id: uid.rnd(),
+      id: uuidv4(),
       value: "",
     };
-    setItems((oldList) => [...oldList, item]); //TODO what is this code called? how does it add new item to the array?
+    const matchedId = (element) => element.id === sourceItem.id;
+    console.log("index of matchedId", items.findIndex(matchedId))
+    const nextIndex = items.findIndex(matchedId) + 1;
+    console.log('nextIndex', nextIndex);
+    console.log('items array', items)
+    items.splice(nextIndex, 0, item);
+    console.log('new items array', items);
+
+    setItems([...items]);
+    // setItems((oldList) => [...oldList, item]);
+ 
   }
 
   function deleteItem(id) {
@@ -44,7 +59,7 @@ function EditableList() {
         value={item.value}
         type="text"
         onChange={(e) => updateItem(item, e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && addItem(e)}
+        onKeyDown={(e) => e.key === "Enter" && addItem(item, e)}
         autoFocus
       />
     );
