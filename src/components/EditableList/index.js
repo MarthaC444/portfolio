@@ -1,44 +1,37 @@
 import React, { useState } from "react";
-import { Container, Button, Form } from "react-bootstrap";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Container, Button, Form, Row, Col } from "react-bootstrap";
 import TextareaAutosize from "react-textarea-autosize";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import "../../App/styles.css";
 
-const initialItem = { // Can create one of these that can be used to initialize the array and for addItem?
-  id: uuidv4(),
-  value: "",
-};
-
 function EditableList() {
+  const initialItem = {
+    id: uuidv4(),
+    value: "",
+  };
+
   const [items, setItems] = useState([initialItem]);
 
   function addItem(sourceItem, e) {
-    console.log('e', e);
-    console.log('sourceItem', sourceItem.id);
-    // button add comes in with undefined sourceItem
-    if (sourceItem === undefined) { sourceItem = items[items.length - 1];}
-    console.log('sourceItem 2', sourceItem.id);
-
-    e === undefined ? (e = "") : e.preventDefault();
-
-    // e.preventDefault();
     const item = {
       id: uuidv4(),
       value: "",
     };
-    const matchedId = (element) => element.id === sourceItem.id;
-    console.log("index of matchedId", items.findIndex(matchedId))
-    const nextIndex = items.findIndex(matchedId) + 1;
-    console.log('nextIndex', nextIndex);
-    console.log('items array', items)
-    items.splice(nextIndex, 0, item);
-    console.log('new items array', items);
+    // Add by button arrives with undefined sourceItem.id
+    // Assigns last item in the array as the sourceItem
+    if (sourceItem.id === undefined) {
+      sourceItem = items[items.length - 1];
+    }
 
+    // Add by button arrives undefined but doesn't need a preventDefault().
+    // Add by "Enter" needs a preventDefault() to stop carriage return
+    e === undefined ? (e = "") : e.preventDefault();
+
+    // Finds the sourceItem in the array by it's id and adds new item after it
+    const sourceItemId = (element) => element.id === sourceItem.id;
+    items.splice(items.findIndex(sourceItemId) + 1, 0, item);
     setItems([...items]);
-    // setItems((oldList) => [...oldList, item]);
- 
   }
 
   function deleteItem(id) {
@@ -51,61 +44,55 @@ function EditableList() {
     setItems([...items]);
   }
 
-  function createInput(item) {
-    return (
-      <TextareaAutosize
-        className="editable-textarea"
-        style={{ width: "100%" }}
-        value={item.value}
-        type="text"
-        onChange={(e) => updateItem(item, e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && addItem(item, e)}
-        autoFocus
-      />
-    );
-  }
-
   return (
-    <Container className="restrict-width">
-      <h1 className="mx-auto text-center">An Editable List</h1>
-      {/* Unordered list with items */}
-      <TransitionGroup component="form" className="pb-5">
-        {items.map((item) => (
-          <CSSTransition key={item.id} timeout={400} classNames="item">
-            <Form.Check
-              key={`default-checkbox`}
-              className="mb-3 w-100"
-              type={"checkbox"}
-              id={`{item.id}`}
-              label={createInput(item)}
-              onClick={(e) => deleteItem(item.id)}
-            />
-          </CSSTransition>
-        ))}
-      </TransitionGroup>
-      <Button
-        name="add an item"
-        variant="outline-dark"
-        className="btn btn-lg d-flex flex-row "
-        onClick={(e) => addItem(e)}
-      >
-        <i className="bi bi-plus-circle"></i>
-        <span className="px-3 text-nowrap">Add an item</span>
-      </Button>
-      <div className="bg-secondary py-2">
-        <ul className="list-group py-5">
-          {items.map((item) => {
-            return (
-              <li className="list-group-item" key={item.id}>
-                <button className="" onClick={() => deleteItem(item.id)}>
-                  X
-                </button>
-                {item.value}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+    <Container className="" md={4}>
+      <Row>
+        <Col className="mx-auto p-4" sm={12} md={6}>
+          <div className="mx-auto border p-4">
+            <h1 className="mx-auto text-center">An Editable List</h1>
+            {items.map((item) => (
+              <div key={item.id}>
+                <Form.Check
+                  className="d-flex flex-row my-3"
+                  type={"checkbox"}
+                >
+                  <Form.Check.Input
+                    type={"checkbox"}
+                    id={`{item.id}`}
+                    onChange={(e) => deleteItem(item.id)}
+                  />
+                  <TextareaAutosize
+                    className="w-100 ms-2"
+                    style={{
+                      borderStyle: "none",
+                      borderColor: "transparent",
+                      overflow: "auto",
+                      outline: "none",
+                      resize: "none",
+                    }}
+                    id={item.id}
+                    value={item.value}
+                    type="text"
+                    placeholder="Add an item"
+                    onChange={(e) => updateItem(item, e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && addItem(item, e)}
+                    autoFocus
+                  />
+                </Form.Check>
+              </div>
+            ))}
+            <Button
+              name="add an item"
+              variant="outline-dark"
+              className="btn btn-lg d-flex flex-row mx-auto mt-4"
+              onClick={(e) => addItem(e)}
+            >
+              <i className="bi bi-plus-circle"></i>
+              <span className="px-3 text-nowrap">Add an item</span>
+            </Button>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 }

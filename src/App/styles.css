@@ -20,25 +20,10 @@ p {
 
 /* EDITABLE LIST */
 
-.item-exit-active {
-  opacity: 0;
-  transition: opacity 400ms ease-out;
-}
-
-.editable-textarea {
+/* .editable-textarea {
   border-style: none;
   border-color: transparent;
   overflow: auto;
   outline: none;
   resize: none;
-}
-
-/* .form-check-label {
-  width: 100%;
 } */
-
-@media (min-width: 576px) {  
-  .restrict-width {
-    max-width: 400px;
-  }
-}
