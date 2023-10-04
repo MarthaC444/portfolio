@@ -52,10 +52,7 @@ function EditableList() {
             <h1 className="mx-auto text-center">An Editable List</h1>
             {items.map((item) => (
               <div key={item.id}>
-                <Form.Check
-                  className="d-flex flex-row my-3"
-                  type={"checkbox"}
-                >
+                <Form.Check className="d-flex flex-row my-3" type={"checkbox"}>
                   <Form.Check.Input
                     type={"checkbox"}
                     id={`{item.id}`}
@@ -87,7 +84,6 @@ function EditableList() {
               className="btn btn-lg d-flex flex-row mx-auto mt-4"
               onClick={(e) => addItem(e)}
             >
-              <i className="bi bi-plus-circle"></i>
               <span className="px-3 text-nowrap">Add an item</span>
             </Button>
           </div>
