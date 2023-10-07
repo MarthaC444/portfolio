@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import "../../App/styles.css";
 
 function EditableList() {
+
   const initialItem = {
     id: uuidv4(),
     value: "",
@@ -18,6 +19,7 @@ function EditableList() {
       id: uuidv4(),
       value: "",
     };
+
     // Add by button arrives with undefined sourceItem.id
     // Assigns last item in the array as the sourceItem
     if (sourceItem.id === undefined) {
@@ -28,7 +30,7 @@ function EditableList() {
     // Add by "Enter" needs a preventDefault() to stop carriage return
     e === undefined ? (e = "") : e.preventDefault();
 
-    // Finds the sourceItem in the array by it's id and adds new item after it
+    // Finds the sourceItem in the array by it's id and adds the new item after it
     const sourceItemId = (element) => element.id === sourceItem.id;
     items.splice(items.findIndex(sourceItemId) + 1, 0, item);
     setItems([...items]);
@@ -54,8 +56,10 @@ function EditableList() {
               <div key={item.id}>
                 <Form.Check className="d-flex flex-row my-3" type={"checkbox"}>
                   <Form.Check.Input
+                    role="checkbox"
+                    id={item.id}
                     type={"checkbox"}
-                    id={`{item.id}`}
+                    aria-checked="false"
                     onChange={(e) => deleteItem(item.id)}
                   />
                   <TextareaAutosize
@@ -67,9 +71,9 @@ function EditableList() {
                       outline: "none",
                       resize: "none",
                     }}
-                    id={item.id}
+                    htmlFor={item.id}
+                    role="textarea"
                     value={item.value}
-                    type="text"
                     placeholder="Add an item"
                     onChange={(e) => updateItem(item, e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && addItem(item, e)}
@@ -79,12 +83,12 @@ function EditableList() {
               </div>
             ))}
             <Button
+              className="btn btn-lg d-flex flex-row mx-auto mt-4"
               name="add an item"
               variant="outline-dark"
-              className="btn btn-lg d-flex flex-row mx-auto mt-4"
               onClick={(e) => addItem(e)}
             >
-              <span className="px-3 text-nowrap">Add an item</span>
+              Add an item
             </Button>
           </div>
         </Col>
