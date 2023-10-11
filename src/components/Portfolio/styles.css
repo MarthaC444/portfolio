@@ -1,7 +1,9 @@
 .overlay {
   background-color: rgba(0, 0, 0, .7);
+  border-radius: 0%;
 }
 
 .card {
   border-radius: 0%;
 }
+
