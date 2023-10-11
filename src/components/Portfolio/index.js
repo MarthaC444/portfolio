@@ -16,6 +16,8 @@ function Portfolio(props) {
       <Container className="mt-3">
         <h2 className="mb-5 text-uppercase fw-bold text-center">Portfolio</h2>
         <Row className="py-3">
+          {/* map function here to display portfolio cards */}
+          {/* {projects.map((item) => ())} */}
           <PortfolioProject />
           <SecondProject />
           <ThirdProject />
