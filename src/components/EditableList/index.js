@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 import "../../App/styles.css";
 
 function EditableList() {
-
   const initialItem = {
     id: uuidv4(),
     value: "",
