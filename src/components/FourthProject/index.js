@@ -20,7 +20,7 @@ function ForthProject(props) {
         <Fade in={open}>
           <div
             id="fourth-project-card-content"
-            className="d-flex flex-column justify-content-between card-img-overlay overlay"
+            className="d-flex flex-column justify-content-between overlay"
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
             aria-owns="fourth-project-card-content"
