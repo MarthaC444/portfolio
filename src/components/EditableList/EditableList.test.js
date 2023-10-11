@@ -7,6 +7,7 @@ import EditableList from "../EditableList";
 // https://reactjs.org/link/switch-to-createroot
 const user = userEvent.setup();
 
+
 describe("EditableList component", () => {
 
   it("should render the EditableList component", () => {
