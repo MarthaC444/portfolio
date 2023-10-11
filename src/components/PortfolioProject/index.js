@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -39,12 +40,13 @@ function PortfolioProject(props) {
                     </a>
                   </Col>
                   <Col className="ps-2 pe-3">
-                    <a href="#">
+                    <RouterLink to="/EditableList">
+                      {" "}
                       <i
                         className="bi bi-eye-fill"
                         style={{ fontSize: 30, color: "white" }}
                       ></i>
-                    </a>
+                    </RouterLink>
                   </Col>
                 </Row>
               </Nav>
