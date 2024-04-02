@@ -33,10 +33,9 @@ function Services(props) {
               Next, Supabase and UI tools like React-Bootstrap and MUI.
             </p>
             <p>
-              I'm currently looking for an Apprenticeship or Entry level Jr.
-              development role so if you're located in the Tri-Cities area of
-              east Tennessee or have a remote position, I'd love to hear from
-              you.
+              I'm currently looking for a Jr. Front-end or entry level
+              Full-stack role. If you're located in the Tri-Cities area of east
+              Tennessee or have a remote opportunity I'd love to hear from you.
             </p>
           </Col>
         </Row>
