@@ -5,9 +5,8 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
-import emailjs from "@emailjs/browser";
 
-function Contact(props) {
+function Contact() {
   const form = useRef();
   const nameInput = useRef();
   const emailInput = useRef();
@@ -21,27 +20,39 @@ function Contact(props) {
     messageInput.current.value = "";
   };
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_b90ios1",
-        "template_mzn3koi",
-        form.current,
-        "HXSa5Fi57OF2vsb6W"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          resetForm();
-          setSuccessMessage(true);
-        },
-        (error) => {
-          console.log(error.text);
-          resetForm();
+
+    const inputs = e.target.elements;
+    const data = {};
+
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].name) {
+        data[inputs[i].name] = inputs[i].value;
+      }
+    }
+
+    fetch(process.env.REACT_APP_FORM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
           setFailedMessage(true);
+        } else if (response.ok) {
+          setSuccessMessage(true);
+          resetForm();
         }
-      );
+      })
+      .catch((err) => {
+        // Submit the form manually
+        e.target.submit();
+        resetForm();
+      });
   };
 
   return (
@@ -50,42 +61,38 @@ function Contact(props) {
         <h2 className="mb-4 text-uppercase fw-bold text-center">Contact</h2>
         <Row>
           <Col className="col-xs-100 col-lg-6 mx-auto">
-            <Form ref={form} onSubmit={sendEmail}>
-              <FloatingLabel
-                controlId="floatingName"
-                label="Name"
-                className="mb-3"
-              >
+            <Form
+              ref={form}
+              action={process.env.REACT_APP_FORM_ENDPOINT}
+              onSubmit={handleSubmit}
+              method="POST"
+            >
+              <FloatingLabel label="Name" htmlFor="name" className="mb-3">
                 <Form.Control
                   ref={nameInput}
+                  id="name"
                   type="text"
                   maxLength={100}
-                  name="user_name"
+                  name="Name"
                   placeholder="Your name"
                   required
                 />
               </FloatingLabel>
-              <FloatingLabel
-                controlId="floatingEmail"
-                label="Email"
-                className="mb-3"
-              >
+              <FloatingLabel label="Email" htmlFor="email" className="mb-3">
                 <Form.Control
                   ref={emailInput}
+                  id="email"
                   type="email"
                   maxLength={100}
-                  name="user_email"
+                  name="Email"
                   placeholder="name@example.com"
                   required
                 />
               </FloatingLabel>
-              <FloatingLabel
-                controlId="floatingMessage"
-                label="Message"
-                className="mb-3"
-              >
+              <FloatingLabel label="Message" htmlFor="message" className="mb-3">
                 <Form.Control
                   ref={messageInput}
+                  id="message"
                   type="text"
                   maxLength={2000}
                   as="textarea"
@@ -100,6 +107,14 @@ function Contact(props) {
                 value="Send"
                 className="btn btn-outline-dark"
               />
+              <div aria-hidden="true">
+                <input
+                  type="hidden"
+                  name="_gotcha"
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </div>
             </Form>
           </Col>
         </Row>
@@ -113,7 +128,7 @@ function Contact(props) {
               onClose={() => setSuccessMessage(false)}
               dismissible
             >
-              Message sent! I will get back to you shortly.
+              Message sent! I will respond shortly.
             </Alert>
           )}
         </div>
@@ -128,7 +143,7 @@ function Contact(props) {
               dismissible
             >
               Something went wrong. Please try again,
-              <a href="mailto:marthachamberlain444@gmail.com">send mail</a>, or
+              <a href="mailto:marthachamberlain444@gmail.com"> send mail</a>, or
               even <a href="tel:303-550-1102">call</a>!
             </Alert>
           )}
