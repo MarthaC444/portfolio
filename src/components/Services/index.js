@@ -33,9 +33,9 @@ function Services(props) {
               Next, Supabase and UI tools like React-Bootstrap and MUI.
             </p>
             <p className="change-alignment md-text-start pt-0">
-              I'm currently looking for a Jr. Front-end or entry level
-              Full-stack role. If you're located in the Tri-Cities area of east
-              Tennessee or have a remote opportunity I'd love to hear from you.
+              I'm open to a Jr. Front-end or entry level Full-stack role. If
+              you're located in the Tri-Cities area of east Tennessee or have a
+              remote opportunity I'd love to hear from you.
             </p>
           </Col>
         </Row>
