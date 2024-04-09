@@ -17,13 +17,3 @@ p {
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0.1rem !important;
 }
-
-/* EDITABLE LIST */
-
-/* .editable-textarea {
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  outline: none;
-  resize: none;
-} */
