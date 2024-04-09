@@ -2,9 +2,12 @@ import React, { useRef, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Stack from "react-bootstrap/Stack";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 function Contact() {
   const form = useRef();
@@ -58,7 +61,31 @@ function Contact() {
   return (
     <section id="contact" className="pt-5">
       <Container className="container-md mt-5">
-        <h2 className="mb-4 text-uppercase fw-bold text-center">Contact</h2>
+        <Stack gap={2} className="mb-4">
+          <h2 className="text-uppercase fw-bold text-center">Contact</h2>
+          <Stack
+            direction="horizontal"
+            className="gap-3 text-center align-self-center"
+          >
+            <Button
+              href="mailto:marthachamberlain444@gmail.com"
+              target="_blank"
+              variant="secondary"
+              aria-label="Contact through email"
+              role="link"
+            >
+              <i className="bi bi-envelope-fill" />
+            </Button>
+            <Button
+              href="tel:303-550-1102"
+              variant="secondary"
+              aria-label="Contact through call"
+              role="link"
+            >
+              <i className="bi bi-telephone-fill" />
+            </Button>
+          </Stack>
+        </Stack>
         <Row>
           <Col className="col-xs-100 col-lg-6 mx-auto">
             <Form
