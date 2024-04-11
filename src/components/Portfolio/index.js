@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import ListImage from "../../assets/editable-list-600x400.jpg";
 import BloodMoonImage from "../../assets/blood-moon-600x400.jpg";
+import ShaesFarmImage from "../../assets/shaes-farm-600x400.jpg"
 
 import ProjectCard from "../ProjectCard";
 
@@ -27,13 +28,13 @@ const project = [
     tech: "React Next Supabase MUI",
   },
   {
-    title: "Blood Moon Mobile App",
+    title: "SHAES Farm",
     image:
-      "https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d",
-    github: "",
-    example: "",
-    description: "Coming soon. Blood Moon mobile app.",
-    tech: "React-Native Supabase NativeBase",
+      ShaesFarmImage,
+    // github: "#",
+    example: "https://shaes.farm/poultry/",
+    description: "Community outreach and marketing site.",
+    tech: "HTML Javascript CSS",
   },
 ];
 
