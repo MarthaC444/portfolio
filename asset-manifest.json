@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.080a708b.css",
-    "main.js": "/static/js/main.d92c2f90.js",
+    "main.js": "/static/js/main.5abd0f20.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/hero-streetscene.jpg": "/static/media/hero-streetscene.67f84319b9f3a4365116.jpg",
     "static/media/resume.jpg": "/static/media/resume.0329b052b23af929ff7b.jpg",
@@ -10,15 +10,16 @@
     "static/media/Oswald-VariableFont_wght.ttf": "/static/media/Oswald-VariableFont_wght.46d7853f0185f6bf0c93.ttf",
     "static/media/headshot.jpg": "/static/media/headshot.ba8c0582ef0e787ff451.jpg",
     "static/media/resume.pdf": "/static/media/resume.c0dd165ac40128dc1b9e.pdf",
+    "static/media/shaes-farm-600x400.jpg": "/static/media/shaes-farm-600x400.3339e807c1b8133c6088.jpg",
     "static/media/editable-list-600x400.jpg": "/static/media/editable-list-600x400.5a1a5c5591de306b88fa.jpg",
     "static/media/blood-moon-600x400.jpg": "/static/media/blood-moon-600x400.1bf7ee59940d63acb343.jpg",
     "index.html": "/index.html",
     "main.080a708b.css.map": "/static/css/main.080a708b.css.map",
-    "main.d92c2f90.js.map": "/static/js/main.d92c2f90.js.map",
+    "main.5abd0f20.js.map": "/static/js/main.5abd0f20.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.080a708b.css",
-    "static/js/main.d92c2f90.js"
+    "static/js/main.5abd0f20.js"
   ]
 }
