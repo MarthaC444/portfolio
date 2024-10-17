@@ -33,7 +33,7 @@ const project = [
       ShaesFarmImage,
     // github: "#",
     example: "https://shaes.farm/poultry/",
-    description: "Community outreach and marketing site.",
+    description: "Community outreach and marketing site. Based on html template Grayscale.",
     tech: "HTML Javascript CSS",
   },
 ];
