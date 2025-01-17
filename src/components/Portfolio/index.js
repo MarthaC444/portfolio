@@ -24,7 +24,7 @@ const project = [
     github: "https://github.com/MarthaC444/blood-moon-web",
     example: "https://blood-moon-web.vercel.app/",
     description:
-      "In Progress! Audio meditations and exercises, self check-ins, reminders, and data visualizations.",
+      "In Progress! Auth pages and MUI installed.",
     tech: "React Next Supabase MUI",
   },
   {

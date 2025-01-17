@@ -19,7 +19,6 @@ function Services(props) {
               src={Headshot}
               className="rounded-circle shadow m-3"
               style={{ maxWidth: 350 }}
-              // width="350"
             ></Image>
           </Col>
           <Col sm={12} md={6}>
