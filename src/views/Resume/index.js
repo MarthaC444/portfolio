@@ -42,7 +42,7 @@ function Resume() {
               "linear-gradient(210deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%)",
           }}
         >
-          <Image src={jpgFile} className="img-fluid border border-2" />
+          <Image src={jpgFile} className="img-fluid w-75 border border-2" style={{ maxWidth: "800px" }}/>
         </Container>
         <Container
           fluid
