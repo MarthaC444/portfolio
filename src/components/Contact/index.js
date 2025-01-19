@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,7 +8,6 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 function Contact() {
   const form = useRef();
@@ -16,6 +16,10 @@ function Contact() {
   const messageInput = useRef();
   const [successMessage, setSuccessMessage] = useState(false);
   const [failedMessage, setFailedMessage] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 1,
+  });
 
   const resetForm = () => {
     nameInput.current.value = "";
@@ -62,7 +66,12 @@ function Contact() {
     <section id="contact" className="pt-5">
       <Container className="container-md mt-5">
         <Stack gap={2} className="mb-4">
-          <h2 className="text-uppercase fw-bold text-center">Contact</h2>
+        <div ref={ref}>
+        {inView ?           
+          <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center">
+            Contact
+          </h2> : null}
+        </div>
           <Stack
             direction="horizontal"
             className="gap-3 text-center align-self-center"
