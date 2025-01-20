@@ -9,6 +9,8 @@ import ShaesFarmImage from "../../assets/shaes-farm-600x400.jpg";
 
 import ProjectCard from "../ProjectCard";
 
+import "./styles.css";
+
 const project = [
   {
     title: "List",
@@ -47,13 +49,13 @@ function Portfolio(props) {
   return (
     <section
       id="portfolio"
-      className="pt-5 pb-5"
-      style={{ backgroundColor: "#e4e6e7" }}
+      className="pt-5 pb-5 portfolio-background-gradient"
+      // style={{ backgroundColor: "#e4e6e7" }}
     >
       <Container className="mt-3">
         <div ref={ref}>
           {inView ?           
-          <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center">
+          <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center text-light">
             Portfolio
           </h2> : null}
         </div>
