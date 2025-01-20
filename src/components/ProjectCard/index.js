@@ -13,12 +13,12 @@ function ProjectCard({ project }) {
 
   return (
     <Col md={6} lg={4} className="p-1">
-      <Card className="bg-dark text-white shadow">
+      <Card className="bg-dark border-1 text-white shadow">
         <Card.Img src={image} alt="Card image" />
         <Fade in={open}>
           <Card.ImgOverlay
-            className="d-flex flex-column justify-content-between"
-            style={{ backgroundColor: "rgba(0, 0, 0, .7)", borderRadius: "0%" }}
+            className="d-flex flex-column justify-content-between border-0"
+            style={{ backgroundColor: "rgba(0, 0, 0, .8)", borderRadius: "1%" }}
             id="portfolio-project-card-content"
             aria-owns="portfolio-project-card-content"
             onMouseEnter={() => setOpen(true)}
