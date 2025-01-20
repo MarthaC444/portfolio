@@ -7,7 +7,7 @@ import "./styles.css";
 function Hero(props) {
   return (
     <Container fluid className="hero-img shadow">
-      <Container className="xxl-8 px-4 py-5">
+      <Container className="slide-in-right xxl-8 px-4 py-5">
         <Row className="align-items-center gx-5 py-5 header-color-gradient-small header-color-gradient-large">
           <Col lg={6}>
             <h1 className="lh-3 mb-3 text-uppercase">
