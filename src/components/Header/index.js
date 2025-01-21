@@ -53,17 +53,17 @@ function Header(props) {
         </Navbar.Collapse>
         <Row className="d-flex row justify-content-around pe-2">
           <Col className="px-1">
-            <a href="https://github.com/MarthaC444">
+            <a className="" href="https://github.com/MarthaC444" aria-label="GitHub">
               <i
-                className="bi bi-github text-muted"
+                className="bi bi-github icon-gradient"
                 style={{ fontSize: 30 }}
               ></i>
             </a>
           </Col>
           <Col className="px-1">
-            <a href="https://linkedin.com/in/mchamberlain444">
+            <a href="https://linkedin.com/in/mchamberlain444" aria-label="LinkedIn">
               <i
-                className="bi bi-linkedin text-muted"
+                className="bi bi-linkedin icon-gradient"
                 style={{ fontSize: 30 }}
               ></i>
             </a>

@@ -13,15 +13,15 @@ function Footer(props) {
           <Col className="order-sm-2">
             <Row>
               <Col className="d-flex justify-content-center">
-                <a href="https://github.com/MarthaC444">
+                <a href="https://github.com/MarthaC444" aria-label="GitHub">
                   <i
-                    className="bi bi-github text-muted px-1"
+                    className="bi bi-github icon-gradient px-1"
                     style={{ fontSize: 30 }}
                   ></i>
                 </a>
-                <a href="https://linkedin.com/in/mchamberlain444">
+                <a href="https://linkedin.com/in/mchamberlain444" aria-label="LinkedIn">
                   <i
-                    className="bi bi-linkedin text-muted px-1"
+                    className="bi bi-linkedin icon-gradient px-1"
                     style={{ fontSize: 30 }}
                   ></i>
                 </a>

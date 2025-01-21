@@ -66,17 +66,22 @@ function Contact() {
     <section id="contact" className="pt-5">
       <Container className="container-md mt-5">
         <Stack gap={2} className="mb-4">
-        <div ref={ref}>
-        {inView ?           
-          <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center">
-            Contact
-          </h2> : null}
-        </div>
+          <div ref={ref}>
+            {inView ? (
+              <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center">
+                Contact
+              </h2>
+            ) : null}
+          </div>
           <Stack
             direction="horizontal"
             className="gap-3 text-center align-self-center"
           >
             <Button
+              style={{
+                background:
+                  "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+              }}
               href="mailto:marthachamberlain444@gmail.com"
               target="_blank"
               variant="secondary"
@@ -86,6 +91,10 @@ function Contact() {
               <i className="bi bi-envelope-fill" />
             </Button>
             <Button
+              style={{
+                background:
+                  "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+              }}
               href="tel:303-550-1102"
               variant="secondary"
               aria-label="Contact through call"
@@ -139,9 +148,12 @@ function Contact() {
                 />
               </FloatingLabel>
               <Form.Control
+                style={{
+                  background: "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+                }}
                 type="submit"
                 value="Send"
-                className="btn btn-outline-dark"
+                className="btn border-0 text-light"
               />
               <div aria-hidden="true">
                 <input

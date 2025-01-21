@@ -33,31 +33,38 @@ function Resume() {
       {loading ? <LoadingSpinner /> : null}
       <Fade in={open}>
         <div>
-        <Header />
-        <Container
-          fluid
-          className="mx-auto d-flex justify-content-center py-5 p-sm-5"
-          style={{
-            background:
-              "linear-gradient(210deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%)",
-          }}
-        >
-          <Image src={jpgFile} className="img-fluid w-75 border border-2" style={{ maxWidth: "800px" }}/>
-        </Container>
-        <Container
-          fluid
-          className="ms-auto d-flex justify-content-center m-3 p-5"
-        >
-          <Button
-            className=""
-            variant="outline-dark"
-            href={pdfFile}
-            download="Martha-Chamberlain-Resume"
+          <Header />
+          <Container
+            fluid
+            className="mx-auto d-flex justify-content-center py-5 p-sm-5"
+            style={{
+              background:
+                "linear-gradient(210deg, #6f6f6f 0%, #0E0E0E 70%, #0E0E0E 100%)",
+            }}
           >
-            Download PDF
-          </Button>
-        </Container>
-        <Footer />
+            <Image
+              src={jpgFile}
+              className="img-fluid w-75 border border-2"
+              style={{ maxWidth: "800px" }}
+            />
+          </Container>
+          <Container
+            fluid
+            className="ms-auto d-flex justify-content-center m-3 p-5"
+          >
+            <Button
+              className="btn border-0 text-light"
+              href={pdfFile}
+              style={{
+                background:
+                  "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+              }}
+              download="Martha-Chamberlain-Resume"
+            >
+              Download PDF
+            </Button>
+          </Container>
+          <Footer />
         </div>
       </Fade>
     </>

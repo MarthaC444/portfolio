@@ -40,3 +40,16 @@ p {
     opacity: 1;
   }
 }
+
+.icon-gradient {
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background: linear-gradient(
+    130deg,
+    #020202ff 0%,
+    #595c5fff 46%,
+    #989da1ff 98%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
