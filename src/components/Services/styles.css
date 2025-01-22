@@ -6,24 +6,41 @@
   }
 }
 
-.fade-in-service {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 2s both;
-  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 2s both;
+.tracking-in-contract-bck {
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1.5s both;
+	        animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1.5s both;
 }
 
-@-webkit-keyframes fade-in-service {
+ @-webkit-keyframes tracking-in-contract-bck {
   0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
     opacity: 0;
   }
+  40% {
+    opacity: 0.6;
+  }
   100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     opacity: 1;
   }
 }
-@keyframes fade-in {
+@keyframes tracking-in-contract-bck {
   0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
     opacity: 0;
   }
+  40% {
+    opacity: 0.6;
+  }
   100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     opacity: 1;
   }
 }
+

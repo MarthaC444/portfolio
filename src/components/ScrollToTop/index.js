@@ -21,15 +21,17 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div className="sticky-bottom d-flex justify-content-end">
+    <nav className="sticky-bottom d-flex justify-content-end">
       {showTopBtn && (
         <i
           className="bi bi-caret-up-square-fill pe-4 pb-3 text-muted"
           style={{ fontSize: 40, opacity: 1 }}
           onClick={goToTop}
+          role="button"
+          aria-label="Go to top"
         ></i>
       )}
-    </div>
+    </nav>
   );
 };
 
