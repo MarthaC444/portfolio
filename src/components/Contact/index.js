@@ -9,6 +9,8 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 
+import "./styles.css";
+
 function Contact() {
   const form = useRef();
   const nameInput = useRef();
