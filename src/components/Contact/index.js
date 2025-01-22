@@ -70,7 +70,7 @@ function Contact() {
         <Stack gap={2} className="mb-4">
           <div ref={ref}>
             {inView ? (
-              <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center">
+              <h2 className="tracking-in-contract-bck-short mb-5 text-uppercase fw-bold text-center">
                 Contact
               </h2>
             ) : null}

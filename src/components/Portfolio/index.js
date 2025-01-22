@@ -54,7 +54,7 @@ function Portfolio(props) {
       <Container className="mt-3">
         <div ref={ref}>
           {inView ?           
-          <h2 className="no-wait-fade-in mb-5 text-uppercase fw-bold text-center text-light">
+          <h2 className="tracking-in-contract-bck-short mb-5 text-uppercase fw-bold text-center text-light">
             Portfolio
           </h2> : null}
         </div>
