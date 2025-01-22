@@ -10,7 +10,7 @@ function Services(props) {
   return (
     <section id="whatImDoing" className="pt-5 pb-5">
       <Container className="my-5 mx-auto">
-        <h2 className="pb-3 fade-in-service text-uppercase fw-bold text-center">
+        <h2 className="pb-3 tracking-in-contract-bck text-uppercase fw-bold text-center">
           What I'm Doing
         </h2>
         <Row className="d-flex py-3 flex-sm-column flex-md-row align-items-center">

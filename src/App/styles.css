@@ -1,5 +1,3 @@
-/* override button styling with css - must use !important to overcome react-bootstrap */
-
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"),
@@ -18,25 +16,53 @@ p {
   box-shadow: 0 0 0 0.1rem !important;
 }
 
-.no-wait-fade-in {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+.icon-gradient {
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background: linear-gradient(
+    130deg,
+    #020202ff 0%,
+    #595c5fff 46%,
+    #989da1ff 98%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@-webkit-keyframes no-wait-fade-in {
+.tracking-in-contract-bck-short {
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) .5s both;
+	        animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) .5s both;
+}
+
+ @-webkit-keyframes tracking-in-contract-bck-short {
   0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
     opacity: 0;
   }
+  40% {
+    opacity: 0.6;
+  }
   100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     opacity: 1;
   }
 }
-
-@keyframes fade-in {
+@keyframes tracking-in-contract-bck-short {
   0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
     opacity: 0;
   }
+  40% {
+    opacity: 0.6;
+  }
   100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
     opacity: 1;
   }
 }

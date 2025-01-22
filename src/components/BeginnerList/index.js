@@ -25,7 +25,7 @@ function BeginnerList() {
     <Container className="" md={4}>
       <Row>
         <Col className="mx-auto p-4" sm={12} md={6}>
-          <div className="mx-auto border p-4">
+          <div className="mx-auto rounded-1 border p-4">
             <h1 className="text-center">Beginner List</h1>
             <div className="d-flex justify-content-center">
               <input
@@ -35,7 +35,11 @@ function BeginnerList() {
                 onChange={(e) => setNewItem(e.target.value)}
               />
               <Button
-                className="btn btn-sm"
+                style={{
+                  background:
+                    "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+                }}
+                className="btn btn-sm border-0 text-light"
                 variant="outline-dark"
                 onClick={() => addItem()}
               >

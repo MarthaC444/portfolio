@@ -49,7 +49,7 @@ function EditableList() {
     <Container className="" md={4}>
       <Row>
         <Col className="mx-auto p-4" sm={12} md={6}>
-          <div className="mx-auto border p-4">
+          <div className="mx-auto border rounded-1 p-4">
             <h1 className="mx-auto text-center">An Editable List</h1>
             {items.map((item) => (
               <div key={item.id}>
@@ -82,7 +82,11 @@ function EditableList() {
               </div>
             ))}
             <Button
-              className="btn btn-lg d-flex flex-row mx-auto mt-4"
+              style={{
+                background:
+                  "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+              }}
+              className="btn btn-lg border-0 text-light d-flex flex-row mx-auto mt-4"
               name="add an item"
               variant="outline-dark"
               onClick={(e) => addItem(e)}
