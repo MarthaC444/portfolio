@@ -29,7 +29,12 @@ function ProjectCard({ project }) {
               <Nav>
                 <Row>
                   <Col className="px-2">
-                    <a href={github} target="_blank" rel="noreferrer">
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="View the source code"
+                    >
                       <i
                         className="bi bi-github"
                         style={{ fontSize: 30, color: "white" }}
@@ -37,7 +42,12 @@ function ProjectCard({ project }) {
                     </a>
                   </Col>
                   <Col className="ps-2 pe-3">
-                    <RouterLink to={example} target="_blank" rel="noreferrer">
+                    <RouterLink
+                      to={example}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="See project"
+                    >
                       <i
                         className="bi bi-eye-fill"
                         style={{ fontSize: 30, color: "white" }}

@@ -50,7 +50,6 @@ function Portfolio(props) {
     <section
       id="portfolio"
       className="pt-5 pb-5 portfolio-background-gradient"
-      // style={{ backgroundColor: "#e4e6e7" }}
     >
       <Container className="mt-3">
         <div ref={ref}>

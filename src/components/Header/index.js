@@ -15,7 +15,7 @@ function Header(props) {
     <Navbar expand="lg">
       <Container className="my-4">
         <Navbar.Brand>
-          <RouterLink to="/">
+          <RouterLink to="/" aria-label="Home">
             <Image src={Logo} alt="Martha's monogram as logo" />
           </RouterLink>
         </Navbar.Brand>
@@ -46,6 +46,7 @@ function Header(props) {
             <RouterLink
               to="/resume"
               className="text-uppercase nav-link navlink-animation"
+              aria-label="My resume"
             >
               Resume
             </RouterLink>
@@ -53,7 +54,11 @@ function Header(props) {
         </Navbar.Collapse>
         <Row className="d-flex row justify-content-around pe-2">
           <Col className="px-1">
-            <a className="" href="https://github.com/MarthaC444" aria-label="GitHub">
+            <a
+              className=""
+              href="https://github.com/MarthaC444"
+              aria-label="GitHub"
+            >
               <i
                 className="bi bi-github icon-gradient"
                 style={{ fontSize: 30 }}
@@ -61,7 +66,10 @@ function Header(props) {
             </a>
           </Col>
           <Col className="px-1">
-            <a href="https://linkedin.com/in/mchamberlain444" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com/in/mchamberlain444"
+              aria-label="LinkedIn"
+            >
               <i
                 className="bi bi-linkedin icon-gradient"
                 style={{ fontSize: 30 }}
