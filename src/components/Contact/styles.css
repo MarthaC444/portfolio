@@ -1,16 +1,46 @@
-input[type=text], input[type=email], input[type=submit], textarea {
-    -webkit-transition: all 0.30s ease-in-out !important;
-    -moz-transition: all 0.30s ease-in-out !important;
-    -ms-transition: all 0.30s ease-in-out !important;
-    -o-transition: all 0.30s ease-in-out !important;
-    outline: none !important;
-    padding: 3px 0px 3px 3px !important;
-    margin: 5px 1px 3px 0px !important;
-  }
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+textarea {
+  -webkit-transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -ms-transition: all 0.3s ease-in-out !important;
+  -o-transition: all 0.3s ease-in-out !important;
+  outline: none !important;
+  padding: 5px 0px 3px 12px !important;
+  margin: 5px 1px 3px 0px !important;
+}
 
-  input[type=text]:focus, input[type=email]:focus, input[type=submit]:focus, textarea:focus {
-    box-shadow: 0 0 5px #ff595e !important;
-    padding: 3px 0px 3px 3px !important;
-    margin: 5px 1px 3px 0px !important;
-    border: 1px solid #ff595e !important;
-  }
+input:-webkit-autofill, /* Resets browser dropdown autofill background-color hijack */
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:active {
+  -webkit-background-clip: text !important;
+}
+
+input[type="text"]:focus + label,
+input[type="email"]:focus + label,
+input[type="submit"]:focus + label,
+textarea:focus + label,
+input[data-empty="false"] + label,
+textarea[data-empty="false"] + label,
+input:valid + label,
+textarea:valid + label {
+  top: -18px;
+  left: 0px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="submit"]:focus,
+textarea:focus {
+  box-shadow: 0 0 5px #ff595e !important;
+  padding: 5px 0px 3px 12px !important;
+  margin: 5px 1px 3px 0px !important;
+  border: 1px solid #ff595e !important;
+}
+
+label {
+  transition: all 0.3s ease-in-out !important;
+}
