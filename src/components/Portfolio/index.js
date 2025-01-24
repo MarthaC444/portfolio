@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import PortfolioImage from "../../assets/portfolio-project-600x400.jpg";
 import ListImage from "../../assets/editable-list-600x400.jpg";
 import BloodMoonImage from "../../assets/blood-moon-600x400.jpg";
 import ShaesFarmImage from "../../assets/shaes-farm-600x400.jpg";
@@ -12,6 +13,15 @@ import ProjectCard from "../ProjectCard";
 import "./styles.css";
 
 const project = [
+  {
+    title: "Dev Portfolio",
+    image: PortfolioImage,
+    github:
+      "https://github.com/MarthaC444/portfolio",
+    example: "https://portfolio.marthachamberlain.com/",
+    description: "THIS site.",
+    tech: "React React-Bootstrap",
+  },
   {
     title: "List",
     image: ListImage,
