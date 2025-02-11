@@ -29,17 +29,21 @@ function Contact() {
     messageInput.current.value = "";
   };
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const inputs = e.target.elements;
-    const data = {};
+    let data = {};
 
-    for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i].name) {
-        data[inputs[i].name] = inputs[i].value;
+    function createData() {
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].name) {
+          data[inputs[i].name] = inputs[i].value;
+        }
       }
     }
+    
+    await createData();
 
     fetch(process.env.REACT_APP_FORM_ENDPOINT, {
       method: "POST",
@@ -62,7 +66,7 @@ function Contact() {
         e.target.submit();
         resetForm();
       });
-  };
+  }
 
   return (
     <section id="contact" className="pt-5">
@@ -71,7 +75,7 @@ function Contact() {
           <div ref={ref}>
             {inView ? (
               <h2 className="tracking-in-contract-bck-short mb-5 text-uppercase fw-bold text-center">
-                Contact
+                size Contact
               </h2>
             ) : null}
           </div>
@@ -151,20 +155,21 @@ function Contact() {
               </FloatingLabel>
               <Form.Control
                 style={{
-                  background: "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
+                  background:
+                    "linear-gradient(130deg, #020202ff 0%, #595c5fff 46%, #989da1ff 98%)",
                 }}
                 type="submit"
                 value="Send"
                 className="btn border-0 text-light"
               />
-              <div aria-hidden="true">
+              {/* <div aria-hidden="true">
                 <input
                   type="hidden"
                   name="_gotcha"
                   tabIndex="-1"
                   autoComplete="off"
                 />
-              </div>
+              </div> */}
             </Form>
           </Col>
         </Row>
