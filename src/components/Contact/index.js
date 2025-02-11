@@ -42,7 +42,7 @@ function Contact() {
         }
       }
     }
-    
+
     await createData();
 
     fetch(process.env.REACT_APP_FORM_ENDPOINT, {
@@ -75,7 +75,7 @@ function Contact() {
           <div ref={ref}>
             {inView ? (
               <h2 className="tracking-in-contract-bck-short mb-5 text-uppercase fw-bold text-center">
-                size Contact
+                Contact
               </h2>
             ) : null}
           </div>
